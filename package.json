@@ -23,11 +23,14 @@
     "event-emitter": "~0.3.5"
   },
   "devDependencies": {
+    "browserify": "^14.5.0",
     "tad": "~0.2.7",
     "xlint": "~0.2.2",
     "xlint-jslint-medikoo": "~0.1.4"
   },
+  "browserify": "./dist/polyfill.js",
   "scripts": {
+    "build": "mkdir -p dist && browserify implement.js -o dist/polyfill.js",
     "lint": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --no-cache --no-stream",
     "lint-console": "node node_modules/xlint/bin/xlint --linter=node_modules/xlint-jslint-medikoo/index.js --watch",
     "test": "node ./node_modules/tad/bin/tad"
